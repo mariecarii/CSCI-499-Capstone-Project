@@ -8,6 +8,7 @@ export default async function Home() {
     <main style={{ maxWidth: 480, margin: '80px auto', fontFamily: 'sans-serif' }}>
       <h1>FormCheck</h1>
       <p>Signed in as {data?.claims?.email}</p>
+      <p><a href="/account">Change password</a></p>    
       <form action={logout}><button>Log out</button></form>
       {/* Exercise picker + webcam goes here next */}
     </main>
