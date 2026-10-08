@@ -47,14 +47,15 @@ export default async function SettingsPage({
 
       <section>
         <h2>Reset workout data</h2>
-        <p>Deletes all of your saved workouts.</p>
+        <p>Deletes all of your saved workouts. Your account stays.</p>
         <form action={resetWorkouts}>
-          <ConfirmButton message="Delete all workout history?">Reset all workouts</ConfirmButton>
+          <ConfirmButton message="Delete ALL workout history? This cannot be undone.">Reset all workouts</ConfirmButton>
         </form>
       </section>
 
       <section>
         <h2>Delete account</h2>
+        <p>Deletes your account and all of your workouts.</p>
         <form action={deleteAccount} className="row">
           <input name="confirm_text" placeholder="Type DELETE" autoComplete="off" required />
           <ConfirmButton message="Delete your account permanently? This cannot be undone.">Delete account</ConfirmButton>
