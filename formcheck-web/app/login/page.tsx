@@ -6,7 +6,9 @@ export default async function LoginPage({
   const { error } = await searchParams
   return (
     <main style={{ maxWidth: 320, margin: '80px auto', fontFamily: 'sans-serif' }}>
-      <h1>Log in</h1>
+      <h1>Form Check</h1>
+      <br/>
+      <h2>Log in</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form style={{ display: 'grid', gap: 8 }}>
         <input name="email" type="email" placeholder="Email" required />
