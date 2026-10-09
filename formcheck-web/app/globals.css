@@ -1,0 +1,62 @@
+/* Layout only: centering and spacing. No colors or themes yet. */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Centered narrow column (login, forgot password) */
+.center {
+  max-width: 300px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+/* Main content column for signed-in pages */
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Stack children vertically with space between */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Put children side by side */
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Top navigation bar */
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 16px;
+}
+.nav .brand {
+  margin-right: auto; /* pushes the other links to the right */
+}
+
+/* Small secondary button (Sign up) */
+.small {
+  font-size: 0.8rem;
+  align-self: center;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+video {
+  width: 100%;
+  max-width: 640px;
+  transform: scaleX(-1); /* mirror like a selfie camera */
+}
