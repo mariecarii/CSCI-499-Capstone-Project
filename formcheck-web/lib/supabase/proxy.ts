@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 // Pages anyone can visit without being signed in
-const PUBLIC_PATHS = ['/login', '/forgot-password']
+const PUBLIC_PATHS = ['/login', '/forgot-password', '/reset-password', '/auth']
 
 // Runs before EVERY matching request (see proxy.ts in the project root).
 // Job 1: refresh the access token if it's about to expire, and save the new cookies.
