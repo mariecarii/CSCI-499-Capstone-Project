@@ -44,3 +44,7 @@ Help people check their exercise form from their device's camera. We extract bod
 ## ML notebook
 
 1. 
+
+# License
+
+MIT. See [LICENSE](LICENSE).
