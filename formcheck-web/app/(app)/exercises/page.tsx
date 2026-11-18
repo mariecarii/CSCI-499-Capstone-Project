@@ -37,9 +37,15 @@ export default async function ExercisesPage({
           <h2>{e.name}</h2>
           <p>{REGION_LABELS[e.region]}</p>
           <p>{e.description}</p>
-          <Link href={`/session/${e.slug}`}>Start</Link>
+          <p className="row">
+            <Link href={`/session/${e.slug}`}>Start</Link>
+            <a href={e.muscleWiki.pageUrl} target="_blank" rel="noopener noreferrer">
+              How to do it (MuscleWiki) ↗
+            </a>
+          </p>
         </section>
       ))}
     </>
   )
 }
+

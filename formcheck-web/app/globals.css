@@ -58,5 +58,14 @@ section {
 video {
   width: 100%;
   max-width: 640px;
-  transform: scaleX(-1); /* mirror like a selfie camera */
+}
+
+video.mirror{
+  transform: scaleX(-1);
+}
+
+/*musclewiki demo videos besides each other and wraps on smaller screens*/
+.guide-video{
+  flex: 1 1 280px;
+  margin: 0;
 }
