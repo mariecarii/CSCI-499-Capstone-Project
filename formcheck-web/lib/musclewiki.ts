@@ -55,7 +55,7 @@ export async function getExerciseGuide(search: string): Promise<ExerciseGuide | 
     }
 
     try{
-        const url = `${BASE_URL}/search?q${encodeURIComponent(search)}&limit=5`        
+        const url = `${BASE_URL}/search?q=${encodeURIComponent(search)}&limit=5`      
         const res = await fetch(url, {
             headers: { 'X-API-key': key },
             next: { revalidate: ONE_WEEK },
