@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# formcheck-web
 
-## Getting Started
+The web app for the AI Form Checker. Built with [Next.js](https://nextjs.org) and [Supabase](https://supabase.com/).
 
-First, run the development server:
+## Running locally
+1. Copy [../.env.local.example](../.env.local.example) to `.env.local` in this folder and fill in the values.
+2. Make sure you already ran the SQL found in [../supabase/migrations/](../supabase/migrations/) inside your Supabase project.
+3. Install and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts: 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`npm run dev:wsl` (listens on all interfaces if you are on WSL)
 
-## Learn More
+`npm run build` (compile for optimization and production) and `npm start` to start that build
+ 
+ `npm run lint` (to report problems such as unused vars, react mistakes, and styling issues)
 
-To learn more about Next.js, take a look at the following resources:
+## Layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Path | What it holds |
+| --- | --- |
+| `app/` | Routes: `login`, `forgot-password`, `reset-password`, `update-password`, `auth`, and the signed-in area under `(app)/` (exercises, session, history, settings) |
+| `app/(app)/session/[slug]/` | Camera session page for one exercise |
+| `components/` | Shared React components |
+| `lib/exercises.ts` | The list of supported exercises |
+| `lib/musclewiki.ts` | MuscleWiki API client for exercise guides |
+| `lib/supabase/` | Supabase client helpers |
+| `proxy.ts` | Refreshes the auth session on each request |
