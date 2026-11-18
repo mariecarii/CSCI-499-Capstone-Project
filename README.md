@@ -30,7 +30,6 @@ Help people check their exercise form from their device's camera. We extract bod
 1. Create a [Supabase](https://supabase.com/) project, then run the SQL found in  [supabase/migrations/](supabase/migrations/) inside Supabase dashboard's SQL Editor.
 2. Copy [.env.local.example](.env.local.example) to `formcheck-web/.env.local` and fill it in:
    - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: Supabase dashboard, under Connect
-   - `MUSCLEWIKI_API_KEY`: from [api.musclewiki.com](https://api.musclewiki.com)
 3. Install and run:
 
    ```bash

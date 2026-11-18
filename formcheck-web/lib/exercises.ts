@@ -9,10 +9,7 @@ export type Exercise = {
   description: string
   cameraTip: string //tells where to stand for post detection
   formCues: string[] // what formcheck will check during the set
-  muscleWiki:{
-    search: string //name to look up with the musclewiki API
-    pageUrl: string
-  }
+  guideUrl: string // MuscleWiki page that shows how to do the exercise
 }
 
 export const EXERCISES: Exercise[] = [
@@ -27,10 +24,7 @@ export const EXERCISES: Exercise[] = [
       'Keep chest up so your back stays straight',
       'Keep heels flat on the floor'
     ],
-    muscleWiki: {
-      search: 'Bodyweight Squat',
-      pageUrl: 'https://musclewiki.com/exercise/bodyweight-squat',
-    }
+    guideUrl: 'https://musclewiki.com/exercise/bodyweight-squat',
   },
 
   {
@@ -40,10 +34,7 @@ export const EXERCISES: Exercise[] = [
     description: 'Hang from a bar with straight arms, then pull inwards until your chin clears the bar. Lower with control.',
     cameraTip: 'Face the camera far enough back with your hands on the bar and your hips in frame',
     formCues: ['Start each rep with straight arms.', 'Pull until your chin clears the bar'],
-    muscleWiki: {
-      search: 'Pull ups',
-      pageUrl: 'https://musclewiki.com/exercise/pull-ups'
-    }
+    guideUrl: 'https://musclewiki.com/exercise/pull-ups',
   },
 ]
 

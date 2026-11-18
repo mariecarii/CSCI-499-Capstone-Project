@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getExercise } from '@/lib/exercises'
-import ExerciseGuide from '@/components/ExerciseGuide'
 import Camera from './Camera'
 
 // [slug] in the folder name means this page handles /session/anything.
@@ -9,7 +8,7 @@ import Camera from './Camera'
 export default async function SessionPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const exercise = getExercise(slug)
-  if (!exercise) notFound() // shows the 404 page for unknown exercises
+  if (!exercise) notFound()
 
   return (
     <>
@@ -31,11 +30,17 @@ export default async function SessionPage({ params }: { params: Promise<{ slug: 
 
       <section>
         <h2>Your set</h2>
-        <p>Pose detection is not built yet. For now this page shows your camera and lets you log reps by hand.</p>
         <Camera slug={exercise.slug} />
       </section>
 
-      <ExerciseGuide exercise={exercise} />
+      <section>
+        <h2>How to</h2>
+        <p>
+          <a href={exercise.guideUrl} target="_blank" rel="noopener noreferrer">
+            See {exercise.name} on MuscleWiki ↗
+          </a>
+        </p>
+      </section>
     </>
   )
 }
