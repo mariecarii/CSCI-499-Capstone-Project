@@ -39,7 +39,7 @@ export default async function ExercisesPage({
           <p>{e.description}</p>
           <p className="row">
             <Link href={`/session/${e.slug}`}>Start</Link>
-            <a href={e.muscleWiki.pageUrl} target="_blank" rel="noopener noreferrer">
+            <a href={e.guideUrl} target="_blank" rel="noopener noreferrer">
               How to do it (MuscleWiki) ↗
             </a>
           </p>

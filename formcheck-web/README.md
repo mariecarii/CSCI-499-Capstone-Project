@@ -29,7 +29,6 @@ Other scripts:
 | `app/` | Routes: `login`, `forgot-password`, `reset-password`, `update-password`, `auth`, and the signed-in area under `(app)/` (exercises, session, history, settings) |
 | `app/(app)/session/[slug]/` | Camera session page for one exercise |
 | `components/` | Shared React components |
-| `lib/exercises.ts` | The list of supported exercises |
-| `lib/musclewiki.ts` | MuscleWiki API client for exercise guides |
+| `lib/exercises.ts` | The list of supported exercises (with links to MuscleWiki guides) |
 | `lib/supabase/` | Supabase client helpers |
 | `proxy.ts` | Refreshes the auth session on each request |

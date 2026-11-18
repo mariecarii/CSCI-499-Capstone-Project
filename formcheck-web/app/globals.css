@@ -63,9 +63,3 @@ video {
 video.mirror{
   transform: scaleX(-1);
 }
-
-/*musclewiki demo videos besides each other and wraps on smaller screens*/
-.guide-video{
-  flex: 1 1 280px;
-  margin: 0;
-}
