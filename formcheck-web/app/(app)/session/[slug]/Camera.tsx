@@ -50,7 +50,7 @@ export default function Camera({ slug }: { slug: string }) {
 
   return (
     <div className="stack">
-      <video ref={videoRef} playsInline muted />
+      <video ref={videoRef} className="mirror" playsInline muted />
 
       <p className="row">
         {cameraOn ? (
