@@ -18,7 +18,6 @@ export const EXERCISES: Exercise[] = [
     name: 'Squats',
     region: 'lower',
     description: 'Have your feet shoulder-width apart and bend your knees. Press hips back and stop movement once the hip joint is slightly lower than the knees. Then push up to reset back to initial position.',
-    // model was train on side-view photos so the camera needs the side profile of the person
     cameraTip: 'Stand sideways to the camera with head and feet in frame',
     formCues: [
       'Keep chest up so your back stays straight',
@@ -33,9 +32,64 @@ export const EXERCISES: Exercise[] = [
     region: 'upper',
     description: 'Hang from a bar with straight arms, then pull inwards until your chin clears the bar. Lower with control.',
     cameraTip: 'Face the camera far enough back with your hands on the bar and your hips in frame',
-    formCues: ['Start each rep with straight arms.', 'Pull until your chin clears the bar'],
+    formCues: [
+      'Start each rep with straight arms.', 
+      'Pull until your chin clears the bar'
+    ],
     guideUrl: 'https://musclewiki.com/exercise/pull-ups',
   },
+
+  {
+    slug: 'push-up',
+    name: 'Push up',
+    region: 'upper',
+    description: '',
+    cameraTip: '',
+    formCues: ['',''],
+    guideUrl: 'https://musclewiki.com/exercise/push-up',
+  },
+
+  {
+    slug: 'dumbbell-calf-raise',
+    name: 'Dumbbell calf raise',
+    region: 'lower',
+    description: '',
+    cameraTip: '',
+    formCues: [''],
+    guideUrl: 'https://musclewiki.com/exercise/dumbbell-calf-raise',
+  },
+
+  {
+    slug: 'dumbbell-bench-press',
+    name: 'Dumbbell bench press',
+    region: 'upper',
+    description: '',
+    cameraTip: '',
+    formCues: [''],
+    guideUrl: 'https://musclewiki.com/exercise/dumbbell-bench-press',
+  },
+
+  {
+    slug: 'dumbbell-glute-bridge',
+    name: 'Dumbbell glute bridge',
+    region: 'lower',
+    description: '',
+    cameraTip: '',
+    formCues: [''],
+    guideUrl: 'https://musclewiki.com/exercise/dumbbell-glute-bridge',
+  },
+
+  {
+    slug: 'laying-leg-raises',
+    name: 'Laying leg raises',
+    region: 'upper',
+    description: '',
+    cameraTip: '',
+    formCues: [''],
+    guideUrl: 'https://musclewiki.com/exercise/laying-leg-raises',
+  },
+
+  
 ]
 
 export const REGION_LABELS: Record<BodyRegion, string> = {

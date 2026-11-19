@@ -1,5 +1,8 @@
 import Link from 'next/link'
+import { cookies } from 'next/headers'
 import { EXERCISES, REGION_LABELS } from '@/lib/exercises'
+import { GUIDE_MODEL_COOKIE, guideUrlFor, parseGuideModel } from '@/lib/guide-model'
+import GuideModelSwitch from '@/components/GuideModelSwitch'
 
 const FILTERS = ['all', 'upper', 'lower'] as const
 type Filter = (typeof FILTERS)[number]
@@ -14,6 +17,8 @@ export default async function ExercisesPage({
   const filter: Filter = FILTERS.includes(raw as Filter) ? (raw as Filter) : 'all'
 
   const list = filter === 'all' ? EXERCISES : EXERCISES.filter((e) => e.region === filter)
+
+  const model = parseGuideModel((await cookies()).get(GUIDE_MODEL_COOKIE)?.value)
 
   return (
     <>
@@ -30,7 +35,7 @@ export default async function ExercisesPage({
         </Link>
       </p>
 
-      {list.length === 0 && <p>No exercises in this category yet.</p>}
+      <GuideModelSwitch current={model} />
 
       {list.map((e) => (
         <section key={e.slug}>
@@ -39,8 +44,8 @@ export default async function ExercisesPage({
           <p>{e.description}</p>
           <p className="row">
             <Link href={`/session/${e.slug}`}>Start</Link>
-            <a href={e.guideUrl} target="_blank" rel="noopener noreferrer">
-              How to do it (MuscleWiki) ↗
+            <a href={guideUrlFor(e.guideUrl, model)} target="_blank" rel="noopener noreferrer">
+              How to (MuscleWiki)
             </a>
           </p>
         </section>

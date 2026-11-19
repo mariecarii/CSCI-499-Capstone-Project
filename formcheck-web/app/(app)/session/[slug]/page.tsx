@@ -1,6 +1,9 @@
 import Link from 'next/link'
+import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { getExercise } from '@/lib/exercises'
+import { GUIDE_MODEL_COOKIE, guideUrlFor, parseGuideModel } from '@/lib/guide-model'
+import GuideModelSwitch from '@/components/GuideModelSwitch'
 import Camera from './Camera'
 
 // [slug] in the folder name means this page handles /session/anything.
@@ -9,6 +12,8 @@ export default async function SessionPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params
   const exercise = getExercise(slug)
   if (!exercise) notFound()
+
+  const model = parseGuideModel((await cookies()).get(GUIDE_MODEL_COOKIE)?.value)
 
   return (
     <>
@@ -35,8 +40,9 @@ export default async function SessionPage({ params }: { params: Promise<{ slug: 
 
       <section>
         <h2>How to</h2>
+        <GuideModelSwitch current={model} />
         <p>
-          <a href={exercise.guideUrl} target="_blank" rel="noopener noreferrer">
+          <a href={guideUrlFor(exercise.guideUrl, model)} target="_blank" rel="noopener noreferrer">
             See {exercise.name} on MuscleWiki ↗
           </a>
         </p>
